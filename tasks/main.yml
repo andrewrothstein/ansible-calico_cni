@@ -2,6 +2,9 @@
 - name: mkdir install dir
   become: yes
   become_user: root
+  with_items:
+    - '{{calico_cni_install_dir}}'
+    - '{{calico_cni_install_target_dir}}'
   file:
     path: '{{calico_cni_install_dir}}'
     state: directory
@@ -13,7 +16,7 @@
   with_items: '{{calico_cni_binaries}}'
   get_url:
     url: '{{calico_cni_url}}/{{item.f}}'
-    dest: '{{calico_cni_install_dir}}/{{item.f}}'
+    dest: '{{calico_cni_install_target_dir}}/{{item.f}}'
     checksum: '{{item.checksum}}'
     mode: '0755'
 
@@ -22,7 +25,7 @@
   become_user: root
   with_items: '{{calico_cni_binaries}}'
   file:
-    src: '{{calico_cni_install_dir}}/{{item.f}}'
-    dest: '{{calico_cni_install_parent_dir}}/{{item.f}}'
+    src: '{{calico_cni_install_target_dir}}/{{item.f}}'
+    dest: '{{calico_cni_install_dir}}/{{item.f}}'
     state: link
 
