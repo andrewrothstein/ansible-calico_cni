@@ -6,7 +6,7 @@
     - '{{calico_cni_install_target_dir}}'
     - '{{calico_cni_install_dir}}'
   file:
-    path: '{{calico_cni_install_dir}}'
+    path: '{{item}}'
     state: directory
     mode: '0755'
     
