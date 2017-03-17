@@ -8,7 +8,7 @@
   file:
     path: '{{item}}'
     state: directory
-    mode: '0755'
+    mode: 0755
     
 - name: download...
   become: yes
@@ -18,7 +18,7 @@
     url: '{{calico_cni_url}}/{{item.f}}'
     dest: '{{calico_cni_install_target_dir}}/{{item.f}}'
     checksum: '{{item.checksum}}'
-    mode: '0755'
+    mode: 0755
 
 - name: linking...
   become: yes
