@@ -1,9 +1,9 @@
 ---
-calico_cni_ver: v1.8.3
+calico_cni_ver: v1.10.0
 calico_cni_mirror: https://github.com/projectcalico/cni-plugin/releases/download
 calico_cni_install_dir: /opt/cni/bin
 calico_cni_binaries:
   - f: calico
-    checksum: sha256:97902830560e1cea571cf917af3ead4134c28def6c4b49450de5f22d4aba24a0
+    checksum: sha256:c72abd0d7ee88376952e43999bcbfa7958171708108bd3f1087c599115350b46
   - f: calico-ipam
-    checksum: sha256:03308d28c36746cc45e0b5e05f8ccdb2b15bc0f119059b525b7f25a3e58c3278
+    checksum: sha256:280fdb1d80f11904adc11760a9a5f3ae29b2aaf911ff0163a8da25646e757413
