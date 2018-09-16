@@ -13,17 +13,17 @@
 - name: download...
   become: yes
   become_user: root
-  with_items: '{{calico_cni_binaries}}'
+  with_items: '{{calico_cni_binaries[calico_cni_ver]}}'
   get_url:
-    url: '{{calico_cni_url}}/{{item.f}}'
+    url: '{{calico_cni_url}}/{{item.f}}{% if calico_cni_platform != "amd64" %}-{{calico_cni_platform}}{% endif %}'
     dest: '{{calico_cni_install_target_dir}}/{{item.f}}'
-    checksum: '{{item.checksum}}'
+    checksum: '{{item.checksums[calico_cni_platform]}}'
     mode: 0755
 
 - name: linking...
   become: yes
   become_user: root
-  with_items: '{{calico_cni_binaries}}'
+  with_items: '{{calico_cni_binaries[calico_cni_ver]}}'
   file:
     src: '{{calico_cni_install_target_dir}}/{{item.f}}'
     dest: '{{calico_cni_install_dir}}/{{item.f}}'
