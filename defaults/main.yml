@@ -15,4 +15,3 @@ calico_cni_binaries:
         amd64: sha256:d07faee2436b83d594a9d2be5dd4d7d111f750387c1f250b0792652c7aa575a2
         arm64: sha256:fffeec067fe777adbad10da0a9897624d9f29b583e2c081fe9a005c552240848
         ppc64le: sha256:f01a8a23ea14622267fcae0e3202e73c82a5ef66dcb144f3eda23378f34dadff
-

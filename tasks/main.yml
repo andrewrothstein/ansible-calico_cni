@@ -28,4 +28,3 @@
     src: '{{calico_cni_install_target_dir}}/{{item.f}}'
     dest: '{{calico_cni_install_dir}}/{{item.f}}'
     state: link
-
