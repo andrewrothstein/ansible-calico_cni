@@ -1,4 +1,4 @@
 ---
 # vars file for calico-cni
-calico_cni_url: '{{calico_cni_mirror}}/{{calico_cni_ver}}'
-calico_cni_install_target_dir: '{{calico_cni_install_dir}}/calico-cni-{{calico_cni_ver}}'
+calico_cni_url: '{{ calico_cni_mirror }}/{{ calico_cni_ver }}'
+calico_cni_install_target_dir: '{{ calico_cni_install_dir }}/calico-cni-{{ calico_cni_ver }}'

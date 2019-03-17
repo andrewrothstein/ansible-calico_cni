@@ -1,5 +1,5 @@
 ---
-calico_cni_ver: v3.2.1
+calico_cni_ver: v3.6.0
 calico_cni_mirror: https://github.com/projectcalico/cni-plugin/releases/download
 calico_cni_install_dir: /opt/cni/bin
 calico_cni_platform: amd64
@@ -15,3 +15,15 @@ calico_cni_binaries:
         amd64: sha256:d07faee2436b83d594a9d2be5dd4d7d111f750387c1f250b0792652c7aa575a2
         arm64: sha256:fffeec067fe777adbad10da0a9897624d9f29b583e2c081fe9a005c552240848
         ppc64le: sha256:f01a8a23ea14622267fcae0e3202e73c82a5ef66dcb144f3eda23378f34dadff
+  v3.6.0:
+    - f: calico
+      checksums:
+        amd64: sha256:afddaed8d9d8126b1b24aa3a3cf1c7c67d4a85f30d34a74e9042326f1f8a632c
+        arm64: sha256:be2ad569278dd0381b5e00228159847f6abb10eaf540b8ac15ceab3c43ab2da8
+        ppc64le: sha256:40625e3422dc9bf0d3d05ae4b07165a4e28c0b075cd183c33ae3a6b867110ef6
+    - f: calico-ipam
+      checksums:
+        amd64: sha256:b7787662ba93dc0e84c9c695ee50e951e4017b37463bb4d7bfa6ed6f27416c24
+        arm64: sha256:861a3cd7033a4f782292393f4c6a306f81105841c806d7abd5786c8fdf44f5bd
+        ppc64le: sha256:8bc16609a6a0683fe84cd05f28ba51ac9138507febc2f04061c7ba26acdacd0f
+
