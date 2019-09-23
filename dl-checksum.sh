@@ -1,20 +1,20 @@
 #!/usr/bin/env sh
-VER=v3.8.0
+VER=${1:-v3.9.0}
 DIR=~/Downloads
 MIRROR=https://github.com/projectcalico/cni-plugin/releases/download/$VER
 
 dl()
 {
-    APP=$1
-    PLATFORM=$2
-    URL=$MIRROR/$APP-$PLATFORM
-    LFILE=$DIR/$APP-$PLATFORM-$VER
-    if [ ! -e $LFILE ]
+    local app=$1
+    local arch=$2
+    local url=$MIRROR/$app-$arch
+    local lfile=$DIR/$app-$arch-$VER
+    if [ ! -e $lfile ];
     then
-        wget -q -O $LFILE $URL
+        wget -q -O $lfile $url
     fi
-    printf "        # %s\n" $URL
-    printf "        %s: sha256:%s\n" $PLATFORM `sha256sum $LFILE | awk '{print $1}'`
+    printf "        # %s\n" $url
+    printf "        %s: sha256:%s\n" $arch `sha256sum $lfile | awk '{print $1}'`
 }
 
 printf "  %s:\n" $VER
