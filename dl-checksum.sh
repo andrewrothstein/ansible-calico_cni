@@ -1,14 +1,14 @@
 #!/usr/bin/env sh
-VER=${1:-v3.10.1}
 DIR=~/Downloads
-MIRROR=https://github.com/projectcalico/cni-plugin/releases/download/$VER
+MIRROR=https://github.com/projectcalico/cni-plugin/releases/download
 
 dl()
 {
-    local app=$1
-    local arch=$2
-    local url=$MIRROR/$app-$arch
-    local lfile=$DIR/$app-$arch-$VER
+    local ver=$1
+    local app=$2
+    local arch=$3
+    local url=$MIRROR/$ver/$app-$arch
+    local lfile=$DIR/$app-$arch-$ver
     if [ ! -e $lfile ];
     then
         wget -q -O $lfile $url
@@ -17,15 +17,21 @@ dl()
     printf "        %s: sha256:%s\n" $arch `sha256sum $lfile | awk '{print $1}'`
 }
 
-printf "  %s:\n" $VER
-printf "    - f: calico\n"
-printf "      checksums:\n"
-dl calico amd64
-dl calico arm64
-dl calico ppc64le
+dl_ver() {
+    local ver=$1
 
-printf "    - f: calico-ipam\n"
-printf "      checksums:\n"
-dl calico-ipam amd64
-dl calico-ipam arm64
-dl calico-ipam ppc64le
+    printf "  %s:\n" $ver
+    printf "    - f: calico\n"
+    printf "      checksums:\n"
+    dl $ver calico amd64
+    dl $ver calico arm64
+    dl $ver calico ppc64le
+
+    printf "    - f: calico-ipam\n"
+    printf "      checksums:\n"
+    dl $ver calico-ipam amd64
+    dl $ver calico-ipam arm64
+    dl $ver calico-ipam ppc64le
+}
+
+dl_ver ${1:-v3.10.2}
