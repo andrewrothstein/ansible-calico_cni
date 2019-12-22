@@ -34,4 +34,4 @@ dl_ver() {
     dl $ver calico-ipam ppc64le
 }
 
-dl_ver ${1:-v3.11.0}
+dl_ver ${1:-v3.11.1}
