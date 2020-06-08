@@ -228,11 +228,8 @@ calico_cni_binaries:
   v3.14.1:
     - f: calico
       checksums:
-  v3.14.1:
-    - f: calico
-      checksums:
         # https://github.com/projectcalico/cni-plugin/releases/download/v3.14.1/calico-amd64
-        amd64: sha256:72a791188b231dc2a93f1ad2e9917bb4bb10b80aa6184adacf0af9cbccffd54b
+        amd64: sha256:271816c769f406ebca37818fc4ac452ad09fc5fbd62859c2559c3842422d8a5e
         # https://github.com/projectcalico/cni-plugin/releases/download/v3.14.1/calico-arm64
         arm64: sha256:ccd6e8352a07b2f5cd41f2a25401c9ce4dd4f344c7efd821adfa1dc38570d1e4
         # https://github.com/projectcalico/cni-plugin/releases/download/v3.14.1/calico-ppc64le
