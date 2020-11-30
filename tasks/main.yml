@@ -1,5 +1,5 @@
 ---
-- name: mkdir install dir
+- name: mkdir install dirs
   become: yes
   become_user: root
   with_items:
@@ -10,7 +10,7 @@
     state: directory
     mode: 0755
     
-- name: download...
+- name: downloading binaries for {{ calico_cni_ver }}
   become: yes
   become_user: root
   with_items: '{{ calico_cni_binaries[calico_cni_ver] }}'
@@ -20,7 +20,7 @@
     checksum: '{{ item.checksums[calico_cni_platform] }}'
     mode: 0755
 
-- name: linking...
+- name: linking binaries for {{ calico_cni_ver }}
   become: yes
   become_user: root
   with_items: '{{ calico_cni_binaries[calico_cni_ver] }}'
