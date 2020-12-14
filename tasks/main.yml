@@ -10,7 +10,7 @@
     state: directory
     mode: 0755
     
-- name: downloading binaries for {{ calico_cni_ver }}
+- name: downloading binaries for {{ calico_cni_ver }} to {{ calico_cni_install_target_dir }}
   become: yes
   become_user: root
   with_items: '{{ calico_cni_binaries[calico_cni_ver] }}'
@@ -20,7 +20,7 @@
     checksum: '{{ item.checksums[calico_cni_platform] }}'
     mode: 0755
 
-- name: linking binaries for {{ calico_cni_ver }}
+- name: linking binaries for {{ calico_cni_ver }} from {{ calico_cni_install_dir }} to {{ calico_cni_install_target_dir}}
   become: yes
   become_user: root
   with_items: '{{ calico_cni_binaries[calico_cni_ver] }}'

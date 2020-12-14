@@ -1,5 +1,15 @@
 ---
 - hosts: all
   roles:
-    - role: '{{playbook_dir}}'
-      
+    - role: '{{ playbook_dir }}'
+  tasks:
+    - command: /opt/cni/bin/calico -v
+      register: calico_test_output
+    - name: calico -v
+      debug:
+        msg: '{{ calico_test_output.stdout }}'
+    - command: /opt/cni/bin/calico-ipam
+      register: calico_ipam_test_output
+    - name: calico-ipam -v
+      debug:
+        msg: '{{ calico_ipam_test_output.stdout }}'
