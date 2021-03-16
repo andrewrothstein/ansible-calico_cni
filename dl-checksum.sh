@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -e
 DIR=~/Downloads
 MIRROR=https://github.com/projectcalico/cni-plugin/releases/download
 
@@ -34,4 +35,4 @@ dl_ver() {
     dl $ver calico-ipam ppc64le
 }
 
-dl_ver ${1:-v3.18.0}
+dl_ver ${1:-v3.18.1}
