@@ -1,6 +1,6 @@
 andrewrothstein.calico-cni
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-calico-cni.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-calico-cni)
+![Build Status](https://github.com/andrewrothstein/ansible-calico-cni/actions/workflows/build.yml/badge.svg)
 
 Installs the [Calico CNI plugin](https://github.com/projectcalico/cni-plugin)
 
